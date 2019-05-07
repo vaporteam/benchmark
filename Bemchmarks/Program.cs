@@ -17,7 +17,7 @@ namespace gotohellt
         }
         public override string ToString()
         {
-            return string.Format("{0, 15} took: {1} miliseconds", Name, Time);
+            return string.Format("{0, 13} took: {1} miliseconds", Name, Time);
         }
         public void WriteToConsole()
         {
@@ -34,7 +34,7 @@ namespace gotohellt
             System.Threading.Thread.Sleep(2000);
             Console.WriteLine("Starting!");
 
-            uint Num = int.MaxValue;
+            int Num = 8000000;
             int Repeats = 4;
             for (int i = 0; i < Repeats; i++)
             {
@@ -86,7 +86,7 @@ namespace gotohellt
             w.Invoke(str);
         }
 
-        static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results Run(int N, uint Num)
+        static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results Run(int N, int Num)
         {
             
             var watch = System.Diagnostics.Stopwatch.StartNew();
@@ -121,121 +121,121 @@ namespace gotohellt
             watch.Stop();
             return new OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results(wich, Convert.ToInt32(watch.ElapsedMilliseconds));
         }
-        static string GotoLoopA(uint num)
+        static string GotoLoopA(int num)
         {
             var count = num;
             start:
             --count;
             if (count > 0)
             {
-                Write();
+                Write(count);
                 goto start;
             }
             start2:
             ++count;
             if (count < num)
             {
-                Write();
+                Write(count);
                 goto start2;
             }
             return "Sign Goto";
         }
-        static string GotoLoopB(uint num)
+        static string GotoLoopB(int num)
         {
             var count = num;
             start:
             count--;
             if (count > 0)
             {
-                Write();
+                Write(count);
                 goto start;
             }
             start2:
             count++;
             if (count < num)
             {
-                Write();
+                Write(count);
                 goto start2;
             }
             return "Goto Sign";
         }
-        static string WhileLoopA(uint num)
+        static string WhileLoopA(int num)
         {
             var count = num;
             while (count > 0)
             {
-                Write();
+                Write(count);
                 --count;
             }
             while (count < num)
             {
-                Write();
+                Write(count);
                 ++count;
             }
             return "Sign While";
         }
-        static string WhileLoopB(uint num)
+        static string WhileLoopB(int num)
         {
             var count = num;
             while (count > 0)
             {
-                Write();
+                Write(count);
                 count--;
             }
             while (count < num)
             {
-                Write();
+                Write(count);
                 count++;
             }
             return "While Sign";
         }
-        static string DoWhileLoopA(uint num)
+        static string DoWhileLoopA(int num)
         {
-            uint count = num;
+            int count = num;
             do
             {
-                Write();
+                Write(count);
                 --count;
             } while (count > 0);
             do
             {
-                Write();
+                Write(count);
                 ++count;
             } while (count < num);
             return "Sign DoWhile";
         }
-        static string DoWhileLoopB(uint num)
+        static string DoWhileLoopB(int num)
         {
             var count = num;
             do
             {
-                Write();
+                Write(count);
                 count--;
             } while (count > 0);
             do
             {
-                Write();
+                Write(count);
                 count++;
             } while (count < num);
             return "DoWhile Sign";
         }
-        static string ForLoopA(uint num)
+        static string ForLoopA(int num)
         {
             var count = num;
-            for (var i = count; i > 0; --i) { Write(); }
-            for (var i = 0; i < num; ++i) { Write(); }
+            for (var i = count; i > 0; --i) { Write(i); }
+            for (var i = 0; i < num; ++i) { Write(i); }
             return "Sign For";
         }
-        static string ForLoopB(uint num)
+        static string ForLoopB(int num)
         {
             var count = num;
-            for (var i = count; i > 0; i--) { Write(); }
-            for (var i = 0; i < num; i++) { Write(); }
+            for (var i = count; i > 0; i--) { Write(i); }
+            for (var i = 0; i < num; i++) { Write(i); }
             return "For Sign";
         }
-        static void Write()
+        static void Write(int Num)
         {
-            // None
+            Math.Pow(Math.Pow(3.141592654, Math.PI), Num);
         }
     }
 
