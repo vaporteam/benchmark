@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace gotohellt
 {
     class OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results
@@ -29,11 +28,9 @@ namespace gotohellt
         static void Main(string[] args)
         {
             meme("Hola Mundo");
-
             Console.WriteLine("Waiting to init");
             System.Threading.Thread.Sleep(2000);
             Console.WriteLine("Starting!");
-
             int Num = 8000000;
             int Repeats = 4;
             for (int i = 0; i < Repeats; i++)
@@ -59,7 +56,6 @@ namespace gotohellt
             }
             Console.ReadKey(false);
         }
-
         static void meme(string str)
         {
             Func<string, bool> w = (c) => {
@@ -85,7 +81,6 @@ namespace gotohellt
             };
             w.Invoke(str);
         }
-
         static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results Run(int N, int Num)
         {
             
@@ -238,6 +233,4 @@ namespace gotohellt
             Math.Pow(Math.Pow(3.141592654, Math.PI), Num);
         }
     }
-
-
 }
