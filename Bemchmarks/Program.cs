@@ -88,31 +88,42 @@ namespace gotohellt
 
         static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results Run(int N, uint Num)
         {
+            
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            string wich = "";
             switch (N)
             {
                 case 0:
-                    return GotoLoopA(Num);
+                    wich = GotoLoopA(Num);
+                    break;
                 case 1:
-                    return GotoLoopB(Num);
+                    wich = GotoLoopB(Num);
+                    break;
                 case 2:
-                    return WhileLoopA(Num);
+                    wich = WhileLoopA(Num);
+                    break;
                 case 3:
-                    return WhileLoopB(Num);
+                    wich = WhileLoopB(Num);
+                    break;
                 case 4:
-                    return DoWhileLoopA(Num);
+                    wich = DoWhileLoopA(Num);
+                    break;
                 case 5:
-                    return DoWhileLoopB(Num);
+                    wich = DoWhileLoopB(Num);
+                    break;
                 case 6:
-                    return ForLoopA(Num);
+                    wich = ForLoopA(Num);
+                    break;
                 case 7:
-                    return ForLoopB(Num);
+                    wich = ForLoopB(Num);
+                    break;
             }
-            return null;
+            watch.Stop();
+            return new OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results(wich, Convert.ToInt32(watch.ElapsedMilliseconds));
         }
-        static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results GotoLoopA(uint num)
+        static string GotoLoopA(uint num)
         {
             var count = num;
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             start:
             --count;
             if (count > 0)
@@ -127,13 +138,11 @@ namespace gotohellt
                 Write();
                 goto start2;
             }
-            watch.Stop();
-            return new OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results("Sign Goto", Convert.ToInt32(watch.ElapsedMilliseconds));
+            return "Sign Goto";
         }
-        static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results GotoLoopB(uint num)
+        static string GotoLoopB(uint num)
         {
             var count = num;
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             start:
             count--;
             if (count > 0)
@@ -148,13 +157,11 @@ namespace gotohellt
                 Write();
                 goto start2;
             }
-            watch.Stop();
-            return new OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results("Goto Sign", Convert.ToInt32(watch.ElapsedMilliseconds));
+            return "Goto Sign";
         }
-        static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results WhileLoopA(uint num)
+        static string WhileLoopA(uint num)
         {
             var count = num;
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             while (count > 0)
             {
                 Write();
@@ -165,13 +172,11 @@ namespace gotohellt
                 Write();
                 ++count;
             }
-            watch.Stop();
-            return new OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results("Sign While", Convert.ToInt32(watch.ElapsedMilliseconds));
+            return "Sign While";
         }
-        static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results WhileLoopB(uint num)
+        static string WhileLoopB(uint num)
         {
             var count = num;
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             while (count > 0)
             {
                 Write();
@@ -182,13 +187,11 @@ namespace gotohellt
                 Write();
                 count++;
             }
-            watch.Stop();
-            return new OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results("While Sign", Convert.ToInt32(watch.ElapsedMilliseconds));
+            return "While Sign";
         }
-        static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results DoWhileLoopA(uint num)
+        static string DoWhileLoopA(uint num)
         {
             uint count = num;
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             do
             {
                 Write();
@@ -199,13 +202,11 @@ namespace gotohellt
                 Write();
                 ++count;
             } while (count < num);
-            watch.Stop();
-            return new OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results("Sign DoWhile", Convert.ToInt32(watch.ElapsedMilliseconds));
+            return "Sign DoWhile";
         }
-        static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results DoWhileLoopB(uint num)
+        static string DoWhileLoopB(uint num)
         {
             var count = num;
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             do
             {
                 Write();
@@ -216,26 +217,21 @@ namespace gotohellt
                 Write();
                 count++;
             } while (count < num);
-            watch.Stop();
-            return new OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results("DoWhile Sign", Convert.ToInt32(watch.ElapsedMilliseconds));
+            return "DoWhile Sign";
         }
-        static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results ForLoopA(uint num)
+        static string ForLoopA(uint num)
         {
             var count = num;
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             for (var i = count; i > 0; --i) { Write(); }
             for (var i = 0; i < num; ++i) { Write(); }
-            watch.Stop();
-            return new OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results("Sign For", Convert.ToInt32(watch.ElapsedMilliseconds));
+            return "Sign For";
         }
-        static OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results ForLoopB(uint num)
+        static string ForLoopB(uint num)
         {
             var count = num;
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             for (var i = count; i > 0; i--) { Write(); }
             for (var i = 0; i < num; i++) { Write(); }
-            watch.Stop();
-            return new OooohGuysThisIsSoSadCanWeHit10000LikesInThisVideo_Results("For Sign", Convert.ToInt32(watch.ElapsedMilliseconds));
+            return "For Sign";
         }
         static void Write()
         {
